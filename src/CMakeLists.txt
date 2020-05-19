@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.6)
 projecttransformSkin
 
 SET(MAYA_VERSION 2015 CACHE STRING "Maya version number")
-SET(SOURCE_FILES "pluginMain.cpp" "transformSkin.cpp" "transformSkin.h")
+SET(SOURCE_FILES "pluginMain.cpp" "skinTransforms.cpp" "skinTransforms.h")
 
 FIND_PACKAGE(OpenGL REQUIRED)
 

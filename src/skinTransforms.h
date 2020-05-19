@@ -19,12 +19,12 @@
 //#include <transformation.h>
 //#include <eigenToMaya.h>
 
-class transformSkin : public MPxNode
+class skinTransforms : public MPxNode
 
 {
 public:
-						transformSkin();
-	virtual             ~transformSkin();
+						skinTransforms();
+	virtual             ~skinTransforms();
 	static  void*   creator();
 	static  MStatus initialize();
 	

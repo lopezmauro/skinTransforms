@@ -1,16 +1,16 @@
 
-#include "transformSkin.h"
+#include "skinTransforms.h"
 
-MTypeId     transformSkin::id(0x00080030);
-MObject		transformSkin::matrix;
-MObject		transformSkin::bindPreMatrix;
-MObject		transformSkin::weights;
-MObject		transformSkin::points;
-MObject		transformSkin::preBind;
+MTypeId     skinTransforms::id(0x00080030);
+MObject		skinTransforms::matrix;
+MObject		skinTransforms::bindPreMatrix;
+MObject		skinTransforms::weights;
+MObject		skinTransforms::points;
+MObject		skinTransforms::preBind;
 
-MObject		transformSkin::weightsList;
+MObject		skinTransforms::weightsList;
 
-MObject		transformSkin::outputs;
+MObject		skinTransforms::outputs;
 
 MMatrix getMatrixFromTriangle(MVector vectorA, MVector vectorB, MVector vectorC)
 {
@@ -28,19 +28,19 @@ MMatrix getMatrixFromTriangle(MVector vectorA, MVector vectorB, MVector vectorC)
 	return matrix;
 }
 
-transformSkin::transformSkin()
+skinTransforms::skinTransforms()
 	: cachedValueIsValid(false)
 {
 }
-transformSkin::~transformSkin()
+skinTransforms::~skinTransforms()
 {
 }
 
-void* transformSkin::creator()
+void* skinTransforms::creator()
 {
-	return new transformSkin();
+	return new skinTransforms();
 }
-MStatus transformSkin::initialize()
+MStatus skinTransforms::initialize()
 {
 	MFnMatrixAttribute  mAttr;
 	MFnNumericAttribute nAttr;
@@ -88,7 +88,7 @@ MStatus transformSkin::initialize()
 	stat = attributeAffects(weightsList, outputs);
 	return MStatus::kSuccess;
 }
-MStatus transformSkin::compute(const MPlug& plug, MDataBlock& data)
+MStatus skinTransforms::compute(const MPlug& plug, MDataBlock& data)
 {
 	MStatus stat;
 
@@ -177,7 +177,7 @@ MStatus transformSkin::compute(const MPlug& plug, MDataBlock& data)
 	return stat;
 }
 
-MStatus transformSkin::setDependentsDirty(const MPlug& plug, MPlugArray& plugArray)
+MStatus skinTransforms::setDependentsDirty(const MPlug& plug, MPlugArray& plugArray)
 {
 	if (plug == points || plug == weights)
 	{
@@ -187,7 +187,7 @@ MStatus transformSkin::setDependentsDirty(const MPlug& plug, MPlugArray& plugArr
 }
 // Turn this define on to see the evaluation work in Serial/Parallel modes
 // #define DO_PRE_EVAL
-MStatus transformSkin::preEvaluation(const  MDGContext& context, const MEvaluationNode& evaluationNode)
+MStatus skinTransforms::preEvaluation(const  MDGContext& context, const MEvaluationNode& evaluationNode)
 {
 #ifdef DO_PRE_EVAL
 	MStatus status;
