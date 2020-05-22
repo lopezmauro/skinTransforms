@@ -1,3 +1,4 @@
 intermediate/
 release/*
 !release/skinTransforms.mll
+*.pyc
