@@ -15,6 +15,9 @@ Add a new nothe that carry the skinCluster weights and inputs but output a list 
 
 ![](skinTransforms.gif)
 
+As you can see on the node graph, the mesh is not a part of the dependecy graph
+![nodeGraph](nodeGraph.png)
+
 
 # Using skintransfomrs.mll
 ## Before start
