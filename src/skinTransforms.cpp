@@ -113,7 +113,7 @@ MStatus skinTransforms::compute(const MPlug& plug, MDataBlock& data)
 	}
 	if (!cachedValueIsValid)
 	{
-		cout << "getting weights ans points" << endl;
+		cout << "getting weights and points" << endl;
 		cachedWeights.clear();
 		cachedPoints.clear();
 		cachedOffsets.clear();
@@ -143,7 +143,7 @@ MStatus skinTransforms::compute(const MPlug& plug, MDataBlock& data)
 			cachedOffsets.push_back(preBindm*baseMatrix.inverse());
 		}
 		cachedValueIsValid = true;
-		cout << "weights ans points cached" << endl;
+		cout << "weights and points cached" << endl;
 	}
 	MPointArray triangle;
 	MArrayDataHandle outputs_h = data.outputArrayValue(outputs);
