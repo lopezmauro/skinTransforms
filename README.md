@@ -25,7 +25,9 @@ A precompiled Windows version for maya2019 is provided in the release folder.
 
 ### Compile you own version
 
-Any external libreries are needed beside the Maya libraries dependencies
+No external libreries are needed beside the Maya libraries dependencies
+Maya help has a small tutorial on hot to setup visual studio for Maya, Linux or Mac Os
+[How setup visual Studio](https://help.autodesk.com/view/MAYAUL/2017/ENU/?guid=__files_Setting_up_your_build_environment_htm)
 
 ## Running instrucions
 Creating a simple skinned scene as exmaple
